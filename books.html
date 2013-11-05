@@ -1,31 +1,38 @@
 <html>
   <head>
     <title>Books Underscore Practice</title>
-    <script src="underscore-min.js"></script>
-    <script src="ejs.js"></script>
+    <script src="javascripts/jquery-1.9.1.min.js"></script>
+    <script src="javascripts/underscore-min.js"></script>
+    <script src="javascripts/books.js"></script>
+    <script src="javascripts/instructions.js"></script>
+
+    <link href="css/reset.css" type="text/css" rel="stylesheet" />
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
-    <div id="bookshelf"></div>
+    <h1>My Amazing Bookshelf</h1>
+
+    <div id="bookshelf">
+    </div>
 
     <div id="menu">
 
     </div>
 
     <div id="todo">
-      <ol>
-        <li>Use _.each to iterate over each book and display it in the bookshelf</li>
-        <li>Use _.map to pull out the web reader URL and create a link around the book image, so that when I click it I can see inside the book.</li>
-        <li>Use _.find to find all the books with a rating of 4 or 5, and add a CSS class to them called hot. Add CSS so that the hot class is a snazzy star shape or something.</li>
-
-      </ol>
+      <div class="instructions">
+        <ol>
+          <li>Use _.each to iterate over each book and display it in the bookshelf</li>
+          <li>Use _.find to find all the books with a rating of 4 or 5, and add a CSS class to them called hot. Add CSS so that the hot class is a snazzy star shape or something.</li>
+          <li>Implement a front-end filter that filters the books by title.</li>
+          <li>Use _.template to enchance your code a bit.</li>
+          <li>Can you refactor the code for a Book into an object?</li>
+          <li>These instructions will self-destruct in 10 seconds.</li>
+        </ol>
+      </div>
     </div>
 
-    <script>
-      function handleResponse(response) {
-        var html = new EJS({url: 'view.ejs'}).render({ books: response.items});
-      }
-    </script>
 
-    <script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script>
+   <script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script>
   </body>
 </html>
