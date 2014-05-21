@@ -26,7 +26,7 @@ h1 {
 }
 
 #todo {
-	position: absolute;
+	position: absolute
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -53,6 +53,14 @@ h1 {
 	margin-bottom: 0.2em;
 }
 
+.all-books {
+	display: inline-block;
+}
+
 .hot {
-	
+
+}
+
+.hot::before {
+	content: "hellojhegrwjhgrhjwgrhjgrhjgwhjwegrhjg"
 }
