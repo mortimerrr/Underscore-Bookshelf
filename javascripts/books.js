@@ -15,6 +15,12 @@ function handleResponse(response) {
 
   });
 
+    $("#searchbox").keydown(function() {
+      console.log($("#searchbox").val());
+      // if searchboxes value is featured in the book's title show the book
+      // otherwise make the book disappear
+    });
+
   // var hot_books = _.filter(response.items, function(book) {
   //   return book.volumeInfo.averageRating >= 4;
   // });
