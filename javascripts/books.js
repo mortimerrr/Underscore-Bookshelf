@@ -1,41 +1,38 @@
-var books = [];
-
 function handleResponse(response) {
   console.log(response.items);
-  
+  var image = "";
   _.each(response.items, function(book) {
-    books.push(new Book(book));
-  });
-};
+    image = $("<img />");
+    image.attr("src", book.volumeInfo.imageLinks.thumbnail);
+    image.data("title", book.volumeInfo.title);
+    $("#bookshelf").append(image);
+    if(book.volumeInfo.averageRating >= 4) {
+      image.addClass("hot");
+     }
 
-// We'll call this the 'constructor'
-function Book(book_info) {
-  this.image_url = book_info.volumeInfo.imageLinks.thumbnail;
-  this.title = book_info.volumeInfo.title;
-  this.rating = book.volumeInfo.averageRating;
-}
-
-Book.prototype.add_to_bookshelf = function() {
-  var image = $("<img />");
-  image.attr("src", this.image_url);
-  image.data("title", this.title);
-  $("#bookshelf").append(image);
-};
-
-Book.prototype.add_hot_books_to_bookshelf = function() {
-  var _this = this;
-  var hot_books = _.filter(books, function(book) {
-    return _this.rating >= 4;
   });
 
-  return hot_books;
-};
+    star_image = $("<img />");
+    star_image.addClass("star");
+    star_image.attr({
+      src: "http://img3.wikia.nocookie.net/__cb20100724183918/spongebob/images/3/33/Patrick_Star.svg",
+      width: "20px",
+      height: "20px"
+    }); 
+    $(".hot").append(star_image);
 
-$(document).ready(function() {
-  $('body').click(function() {
-    new Book().add_hot_books_to_bookshelf();
-  });
-});
+  // var hot_books = _.filter(response.items, function(book) {
+  //   return book.volumeInfo.averageRating >= 4;
+  // });
+
+  // _.each(hot_books, function(hotbook){
+  //   image = $("<img />");
+  //   image.attr("src", hotbook.volumeInfo.imageLinks.thumbnail);
+  //   image.addClass("hot");
+  // });
+
+
+};
 
 
 
