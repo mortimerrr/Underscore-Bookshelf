@@ -10,7 +10,7 @@ function handleResponse(response) {
     image.data("title", book.volumeInfo.title);
     $("#bookshelf").append(image_div);
     if(book.volumeInfo.averageRating >= 4) {
-      image.addClass("hot");
+      image_div.addClass("hot");
      }
 
   });
