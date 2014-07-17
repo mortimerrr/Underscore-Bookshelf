@@ -1,9 +1,9 @@
-Underscore Bookshelf
-====================
+#### Underscore Bookshelf
 
-* Use _.each to iterate over each book and display it in the bookshelf. Add a class book so that you can easily find them later.
-* Use _.filter to find all the books with a rating of 4 or 5, and add a CSS class to them called hot. Add CSS so that the hot class is a snazzy star shape or something.
-* Implement a front-end filter that filters the books by title. Add a search box with an ID, and use its value to filter those books that match the title.
-* Use _.template to enchance your code a bit.
-* Can you refactor the code for a Book into an object?
-* These instructions will self-destruct in 10 seconds.
+A practice in JavaScript, JQuery and Underscore.js we did at the Full-Stack Ruby Web Development course at We Got Coders (wegotcoders.com).  
+
+We've sent out a request for 'Harry Potter' to the Google Books API.  
+We took the response, iterated through each book object, extracted the thumbnail photos of the books and  
+appended those to the DOM/image of the bookshelf.   
+Then we have filtered the books which have received a rating or 4 or above and appended a 'hot' sticker to those books.  
+Filtering the books by title is not yet finished.
